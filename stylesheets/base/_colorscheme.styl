@@ -1,0 +1,29 @@
+// **********
+// HERE WE'LL DEFINE THE COLOR SCHEME OF OUR PROJECT
+// **********
+
+
+/* Typography (we define the colors here, but they're being applied inside the '_typography' partial)
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+$primary-text = $black
+
+if light($primary-text)
+  $secondary-text = shade($primary-text, 10%)
+else
+  $secondary-text = tint($primary-text, 10%)
+
+$links = $primary-text
+
+$headings = $primary-text
+
+
+/* Backgrounds
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+$primary-color = $blue
+$accent-color = $deep-purple-accent-4
+
+$grey = #bdbdbd
+$greyLighten = $grey-lighten-2
+$greyDarken = #757575

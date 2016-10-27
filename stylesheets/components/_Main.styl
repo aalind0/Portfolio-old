@@ -1,0 +1,43 @@
+// **********
+// REACT COMPONENT
+// **********
+
+
+/* SUIT CSS Component
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* core */
+$textBlock
+  position: relative
+  max-width: 700px
+  margin: $spacer-sm 0 0 $spacer-sm
+  line-height: 32px
+  font-size: $text-lg
+
+
+.Main
+  flex: 1 0 auto
+  margin: 0 auto
+  padding: 0 $spacer-regular
+  width: 100%
+  max-width: 1024px
+  +above(mobile)
+    padding: 0 $spacer-lg
+  &-textBlock
+    /* default */
+    @extend $textBlock
+    &--extended
+      /* modifier */
+      @extend $textBlock
+      +above(tablet)
+        padding-right: 1.5em
+        &:after
+          position: absolute
+          display: block
+          content: ''
+          top: 0
+          bottom: 0
+          left: 100%
+          width: 72px
+          background: url('../images/arrow.svg') 10px center/contain no-repeat
+          animation: landing 1.4s ease-out-back 0.7s both

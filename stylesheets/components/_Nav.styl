@@ -1,0 +1,83 @@
+// **********
+// REACT COMPONENT
+// **********
+
+
+.Nav
+  u-boxShadow()
+  flex: none
+  padding: $spacer-md $spacer-regular 0
+  text-align: center
+  color: $white
+  +above(mobile)
+    margin-bottom: $spacer-regular
+  &-avatar
+    overflow: hidden
+    background: $white
+    width: 160px
+    height: 160px
+    margin: 0 auto
+    border-radius: 50%
+  &-heading
+    margin: $spacer-regular 0 0
+    font-size: $text-xl
+    letter-spacing: 5px
+    color: $white
+  &-subHeading
+    display: inline-block
+    padding: ($spacer-sm / 2) $spacer-sm
+    background: $accent-color
+    font-family: $headings-font-family
+    font-style: italic
+    border-radius: 2px
+  &-list
+    display: none
+    +above(mobile)
+      clear: fix
+      display: block
+      position: relative
+      margin: $spacer-md auto
+      max-width: 1280px
+      text-transform: uppercase
+      animation: slideUp 0.7s ease-in-out-quad
+  &-list li
+    +above(mobile)
+      sym-grid(2, 0px)
+    +above(tablet)
+      sym-grid(4, 0px)
+  &-link
+    +above(mobile)
+      a($white)
+      display: block
+      padding: $spacer-md $spacer-lg
+      font-size: responsive 20px 25px
+      font-weight: 300
+      &:hover,
+      &.is-active
+        background: shade($primary-color, 10%)
+
+
+/* Menu Icon
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.Nav
+  &-icon
+    margin: $spacer-md $spacer-regular
+    position: relative
+    animation: slideLeft 0.35s ease-out-back
+    +above(mobile)
+      display: none
+
+
+/* Drawer
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.Drawer-link
+  a($black)
+  display: block
+  padding: $spacer-regular $spacer-sm
+  font-size: 20px
+  font-weight: 300
+  &.is-active
+    background: $grey
+    color: $white

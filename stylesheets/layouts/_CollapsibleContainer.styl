@@ -1,0 +1,76 @@
+
+/* Collapsible Container
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.l-CollapsibleContainer
+  position: relative
+  margin-bottom: $spacer-regular
+  +above(tablet)
+    overflow: hidden
+    padding: $spacer-regular $spacer-sm
+    &:before
+      content: ''
+      position: absolute
+      top: 0px
+      bottom: 0px
+      left: 50%
+      transform: translateX(-50%)
+      margin: $spacer-regular 0
+      width: 1px
+      background: $grey-lighten-2
+    &:after
+      content: ''
+      centerXY()
+      width: 12px
+      height: 12px
+      border: 1px solid $grey-lighten-2
+      border-radius: 50%
+      background: $white
+
+
+/* inside 'CollapsibleContainer'
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.l-CollapsibleContainer-left,
+.l-CollapsibleContainer-right
+  +above(tablet)
+    float: left
+    width: 50%
+
+
+.l-CollapsibleContainer
+  &-left
+    +above(tablet)
+      padding-right: $spacer-md
+  &-right
+    +above(tablet)
+      padding-left: $spacer-md
+
+
+/* dividers between each 'item'
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.Collapsible-item[data-divider='true']
+  position: relative
+  +below(tablet)
+    margin-bottom: $spacer-xl
+    &:before
+      content: ''
+      position: absolute
+      right: 0
+      left: 0
+      bottom: -($spacer-xl / 2)
+      height: 1px
+      margin: 0 10em
+      background: $grey-lighten-2
+    &:after
+      content: ''
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      bottom: -28px
+      width 12px
+      height 12px
+      border: 1px solid $grey-lighten-2
+      border-radius: 50%
+      background: $white

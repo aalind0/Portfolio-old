@@ -1,0 +1,35 @@
+// **********
+// REACT COMPONENT
+// **********
+
+
+.Footer
+  flex: none
+  margin-top: $spacer-lg
+  text-align: center
+  color: $white
+  &-body
+    padding: $spacer-lg 0
+    font-size: $text-md
+    letter-spacing: 2px
+  &-icons
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    margin-top: $spacer-sm
+  &-overlay
+    padding: $spacer-sm $spacer-lg
+    background: shade($primary-color, 20%)
+
+
+/* Icons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.Footer
+  &-Heart
+    transform: translateZ(0) // trick to smooth out the animation
+    animation: beatingHeart 1s cubic-bezier(.9, -0.9, .9, 0.9) infinite
+  &-body:hover
+      .Footer-Heart
+        animation: beatingHeartStronger 0.95s cubic-bezier(.9, -5.9, .9, 5.9) infinite

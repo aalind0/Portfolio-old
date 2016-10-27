@@ -1,0 +1,40 @@
+// **********
+// REACT COMPONENT
+// **********
+
+
+.IconHeader
+  position: relative
+  overflow: hidden
+  padding: $spacer-lg 0 $spacer-lg $spacer-regular
+  &-heading
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    margin-bottom: 0
+    color: $accent-color
+    &:after
+      centerY(absolute)
+      display: inline-block
+      content: ''
+      width: 100%
+      height: 5px
+      background: $grey
+  &-icon
+    position: relative
+    z-index: 3 /* EDGE hack, to hide the :after content from the h2, 1/5 */
+    max-width: 15%
+    background: $white /* EDGE hack, 2/5 */
+    &:after
+      centerXY()
+      display: block
+      content: ''
+      border: 5px solid $grey
+      border-radius: 50%
+      padding: 18Px
+  &-text
+    max-width: 85%
+    padding: 0 $spacer-md
+    position: relative /* EDGE hack, 3/5 */
+    z-index: 2 /* EDGE hack, 4/5 */
+    background: $white /* EDGE hack, 5/5 */

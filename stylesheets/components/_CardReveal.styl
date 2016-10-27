@@ -1,0 +1,48 @@
+// **********
+// REACT COMPONENT
+// **********
+
+
+.CardReveal
+  font-size: $text-lg
+  &-content
+    background: $primary-color
+    color: $white
+    padding: $spacer-regular
+  &-title
+    text-transform: uppercase
+    color: $white
+  &-subTitle
+    font-style: italic
+  &-footerText
+    font-size: $text-regular
+    color: $secondary-text
+
+
+/* Alt version
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.CardReveal[data-alt='true']
+  .CardReveal-content
+    background: tint($accent-color, 50%)
+
+
+/* Inside the card => Reveal
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.Reveal
+  color: $primary-text
+  &-header
+    display: inline-block
+    color: $accent-color
+    border-bottom: 1Px solid $accent-color
+  &-list
+    padding-left: $spacer-md
+    list-style-type: circle
+  &-footer
+    margin-top: $spacer-regular
+    padding-top: $spacer-regular
+    font-size: $text-md
+    font-style: italic
+    color: $secondary-text
+    border-top: 1Px solid $greyLighten

@@ -1,0 +1,102 @@
+// **********
+// OUR HOMEMADE RESET
+// **********
+
+
+/* Reset
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+*
+  box-sizing: border-box
+
+
+html,
+body
+  height: 100%
+
+
+body
+  display: flex
+  flex-direction: column
+
+
+a
+  text-decoration: none
+
+
+button
+  background: $grey
+  border: none
+  &:focus
+    outline: none
+  &[disabled]
+    cursor: not-allowed
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  margin: 0 //override default browser styling
+
+
+img
+  display: block
+  max-width: 100%
+
+
+input:not([type=checkbox]):not([type=radio])
+  -webkit-appearance: none
+
+
+input[type=search]
+  box-sizing: border-box
+
+
+input, textarea, select
+  border: none
+  border-bottom: 1px solid $grey
+  border-radius: 0
+  padding: 0.45Em
+  &:focus
+    border-bottom: 1px solid $accent-color
+    box-shadow: 0 1px 0 0 $accent-color
+    outline: none
+
+
+textarea
+  max-width: 100%
+  border-top: 1px solid $grey
+  &:focus
+    border-top: 1px solid $accent-color
+    box-shadow: 0 -1px 0 0 $accent-color,
+      0 1px 0 0 $accent-color
+
+
+select
+  -webkit-appearance: none
+  -moz-appearance: none
+
+
+/* FF hack, to prevent a sub-pixel rendering issue */
+@-moz-document url-prefix() {
+  select {
+    padding: 0.40Em
+  }
+}
+
+
+::placeholder
+  font-weight: 700
+
+
+p
+  margin: 0 //override default browser styling
+
+
+ul
+  list-style-type: none
+  padding-left: 0
+  margin: 0

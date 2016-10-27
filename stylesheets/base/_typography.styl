@@ -1,0 +1,128 @@
+// **********
+// HERE WE'LL DEFINE THE TYPOGRAPHY
+// **********
+
+
+/* Custom fonts
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@font-face
+  font-family: 'Tofino'
+  src: url('../fonts/Tofino-Regular.otf')
+  font-weight: 400
+  font-style: normal
+
+
+/* Font stacks
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+$headings-font-family = 'Tofino', 'Helvetica Neue', sans-serif
+
+$body-font-family = 'Roboto', 'Helvetica Neue', sans-serif
+
+
+/* Ratios
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+$minor-second   = 1.067
+$major-second   = 1.125
+$minor-third    = 1.2
+$major-third    = 1.25
+$perfect-fourth = 1.333
+$aug-fourth     = 1.414
+$perfect-fifth  = 1.5
+$minor-sixth    = 1.6
+$golden         = 1.618
+$major-sixth    = 1.667
+$minor-seventh  = 1.778
+$major-seventh  = 1.875
+$octave         = 2
+$major-tenth    = 2.5
+$major-eleventh = 2.667
+$major-twelfth  = 3
+$double-octave  = 4
+
+
+/* Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+$base-font-size       = 16px
+$base-line-height     = $golden
+$vr                   = $base-font-size * $base-line-height // vertical-rhythm
+$headings-line-height = $aug-fourth
+
+
+/* Font sizes (Rucksack plugin)
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+$text-sm      = responsive ($base-font-size - 4) ($base-font-size - 2)
+
+$text-regular = responsive ($base-font-size - 2) $base-font-size
+
+$text-md      = responsive ($base-font-size) ($base-font-size + 2)
+
+$text-lg      = responsive ($base-font-size + 2) ($base-font-size + 4)
+
+$text-xl      = responsive ($base-font-size + 7) ($base-font-size + 9)
+
+
+/* Body
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+body
+  font-family: $body-font-family
+  font-size: $text-regular
+  font-weight: 400
+  line-height: $vr
+  color: $primary-text
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+
+/* Headings
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+headings = h1 h2 h3 h4 h5 h6
+
+for h in headings // common settings for all the headings
+  {h}
+    font-family: $headings-font-family
+    font-weight: 400
+    line-height: $headings-line-height
+    color: $headings
+
+
+$headings-ratio = $minor-third
+$margin-bottom-start = $headings-ratio // setting the margin-bottom for the h1
+
+for h in headings { // adjusting the margin-bottom for each different heading by a desc order
+  {h} {
+    margin-bottom: $margin-bottom-start * 1rem;
+  }
+  $margin-bottom-start = $margin-bottom-start / $headings-ratio
+}
+
+
+/* Body text
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+p
+  margin-bottom: $vr
+
+
+/* A mixin to set the color of our links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+a($color = $links, $hover = $color)
+  color: $color
+  &:visited
+    color: $color
+  &:hover
+    color: $hover
+
+
+/* Let's use this mixin right away to set our default link styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+a
+  a($links)

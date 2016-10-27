@@ -1,0 +1,40 @@
+// **********
+// HOVER ME
+// **********
+
+
+/* Adds a border-bottom and fills up an element on hover
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+fill-this($fill-color = $accent-color)
+  padding: 0.2em
+  font-weight: 600
+  background: linear-gradient($fill-color, $fill-color) bottom no-repeat
+  background-size: 100% 2px
+  transition: background-size .1s
+  &:hover
+    background-size: 100% 100%
+
+
+/* Underline From Left (ported from Hover.css)
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+  underlineFromLeft()
+    display: inline-block
+    vertical-align: middle
+    transform: translateZ(0)
+    backface-visibility: hidden
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      z-index: -1
+      left: 0
+      right: 100%
+      bottom: -10px
+      margin-top 12px
+      background: $accent-color
+      height: 4px
+      transition: right 0.2s ease-out-sine // from the Rucksack plugin
+    &:hover:before, &:focus:before, &:active:before
+      right: 0

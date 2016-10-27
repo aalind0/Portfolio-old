@@ -1,0 +1,40 @@
+// **********
+// REACT COMPONENT
+// **********
+
+
+.Collapsible
+  &-expandIcon
+    &:after
+      display: block
+      position: absolute 0 // from the Rucksack plugin
+      content: ''
+      border-radius: 50%
+      background: rgba(224, 224, 224, 0.4)
+      transform: scale(0)
+      transition: transform 0.35s ease-out-back
+  &-title
+    &:focus,
+    &:hover
+      outline: none
+      .Collapsible-expandIcon:after
+        transform: scale(1)
+  &-titleText
+    font-size: $text-lg
+    color: $greyDarken
+  &-hr
+    border-bottom-color: $accent-color !important
+  &-list
+    padding: 0 0 $spacer-md $spacer-md
+    list-style-type: circle
+    li
+      padding-bottom: $spacer-sm
+  &:not(.popOut)
+    .Collapsible-list
+      padding-bottom: 0px
+  &-text
+    padding-left: $spacer-sm
+    font-size: $text-md
+    color: $secondary-text
+  &-text:first-letter
+    font-size: 1.2em

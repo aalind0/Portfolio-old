@@ -1,0 +1,65 @@
+// **********
+// OUR HELPERS
+// **********
+
+
+/* Box-shadox
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+u-boxShadow()
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12)
+
+.u-boxShadow
+  u-boxShadow()
+
+
+/* Highlight a link
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+u-link()
+  a($accent-color)
+  padding-bottom: 1px
+  border-bottom: 1px dashed $accent-color
+
+.u-link
+  u-link()
+
+
+/* Highlight a link + sweeping effect
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+u-linkSweep()
+  u-link()
+  position: relative
+  transition: none
+  transform: translateZ(0) // trick to smooth out the animation
+  &:before
+    display: block
+    position: absolute 0 // from rucksack css
+    z-index: -1
+    content: ''
+    transform: scaleY(0)
+    transform-origin: center bottom
+    background: $accent-color
+  &:hover
+    color: $white
+    transition: all 0.2s ease-out-quint
+    text-shadow: 1px 1px 0px $accent-color // to prevent the text from being invisible in certain cases on iOS devices
+    &:before
+      transform: scaleY(1)
+      transition: all 0.2s ease-out-quint
+
+.u-linkSweep
+  u-linkSweep()
+
+
+/* Highlight a word
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+u-highlight()
+  font-weight: 700
+  color: $accent-color
+
+.u-highlight
+  u-highlight()
